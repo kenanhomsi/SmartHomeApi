@@ -35,14 +35,18 @@ app.use('/api/v1/',authenticationUser,ServicesRouter);
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 10000;
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
 
 const start = async () => {
   try {
     await connectDB(process.env.MONGO_URI)
-    app.listen(port, () =>
-      console.log(`Server is listening on port ${port}...`)
-    );
+    
+    app.listen(port, () => {
+      console.log(`Example app listening on port ${port}`)
+    })
   } catch (error) {
     console.log(error);
   }
