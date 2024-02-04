@@ -10,6 +10,8 @@ const ServiceSchema=mongoose.Schema({
         minLength:10,
         maxLength:50
     },
+    temperature:Number,
+    humidity:Number,
     gassSensor:Number,
     flameSensor:Number,
     IR_K_Sensor:Number,
