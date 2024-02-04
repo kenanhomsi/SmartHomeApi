@@ -19,6 +19,8 @@ const showAllServices= async (req,res)=>{
 
 const Getsingleservice=async (req,res)=>{
     const{ username }=req.query
+
+    console.log(username);
     const service=await Service.findOne({ownerName:username});
     if(!service){
         throw new BadRequestError('wrong userName');
