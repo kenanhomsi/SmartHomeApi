@@ -18,7 +18,7 @@ const showAllServices= async (req,res)=>{
 }
 
 const Getsingleservice=async (req,res)=>{
-    const{ username }=req.query
+    let username=req.user.name;
 
     console.log(username);
     const service=await Service.findOne({ownerName:username});
