@@ -6,6 +6,6 @@ const {showAllServices,CreateServices,Getsingleservice
 
 
 router.route('/').post(CreateServices).get(showAllServices);
-router.route('/singleService/').get(Getsingleservice).patch(updateService);
+router.route('/singleService/?').get(Getsingleservice).patch(updateService);
 
 module.exports=router
