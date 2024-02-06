@@ -27,7 +27,7 @@ const Getsingleservice=async (req,res)=>{
 }
 const updateService=async (req,res)=>{
     let username=req.user.name;
-   
+    console.log(req.body);
     const service=await Service.findOneAndUpdate({ownerName:username},{...req.body})
     if(!service){
         throw new BadRequestError('wrong userName');
